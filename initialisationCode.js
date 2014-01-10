@@ -3,8 +3,8 @@ $(document).ready(function(){
 	$.ajax({
 		//access the JSON file on the server
 		type: "GET",
-		crossDomain: true,
 		datatype: "jsonp",
+		contentType: "application/json",
 		url: "http://dww.aesphere.net/dbDump.json",
 		success: function(obj){
 			//iterate over each element in the collection
@@ -37,6 +37,7 @@ $(document).ready(function(){
 				if(!people.hasOwnProperty(id)){continue;} //not a valid property in prototype chain 
 				chronologicalSort(people[id]);
 			}
+			populateMigrations(people)
 		}
 	});
 });
