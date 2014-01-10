@@ -90,7 +90,6 @@ function init() {
 function initCB(instance) {
 	ge = instance;
 	ge.getWindow().setVisibility(true);
-	populateMigrations(people);
 }
 
 function failureCB(errorCode) {}
